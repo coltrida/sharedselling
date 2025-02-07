@@ -20,18 +20,21 @@ class UserSeeder extends Seeder
                 'email' => 'admin@admin.it',
                 'password' => Hash::make('123456'),
                 'role' => '1',
+                'balance' => 0
             ],
             [
                 'name' => 'cacao',
                 'email' => 'cacao@cacao.it',
                 'password' => Hash::make('123456'),
                 'role' => '0',
+                'balance' => 10000
             ],
             [
                 'name' => 'cacao2',
                 'email' => 'cacao2@cacao.it',
                 'password' => Hash::make('123456'),
                 'role' => '0',
+                'balance' => 20.5
             ],
         ]);
     }

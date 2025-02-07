@@ -10,7 +10,10 @@
                     Name
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Categories
+                    email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    balance
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Actions
@@ -27,12 +30,10 @@
                         {{$item->name}}
                     </td>
                     <td class="px-6">
-                        @foreach($item->categories as $category)
-                            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-green-900 dark:text-green-300">
-                                {{$category->name}}
-                            </span>
-
-                        @endforeach
+                        {{$item->email}}
+                    </td>
+                    <td class="px-6">
+                        {{$item->balanceformattato}}
                     </td>
                     <td class="px-6 pt-2">
                         <button
@@ -51,4 +52,5 @@
         </table>
     </div>
 </div>
+
 

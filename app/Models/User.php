@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -40,5 +41,20 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function getBalanceformattatoAttribute()
+    {
+        return '€ '. number_format($this->balance, 2, ',', '.');
+    }
+
+    public function scopeClients(Builder $query)
+    {
+        $query->where('role', '0');
+    }
+
+    public function scopeIsAdmin()
+    {
+        return $this->role == 1;
     }
 }
