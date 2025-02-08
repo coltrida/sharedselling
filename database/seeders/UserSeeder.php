@@ -17,6 +17,13 @@ class UserSeeder extends Seeder
         User::insert([
             [
                 'name' => 'admin',
+                'surname' => 'admin',
+                'address' => 'via Colombo 2',
+                'city' => 'Rome',
+                'province' => 'RM',
+                'zip' => '06012',
+                'country' => 'Italy',
+                'privacy' => 1,
                 'email' => 'admin@admin.it',
                 'password' => Hash::make('123456'),
                 'role' => '1',
@@ -24,6 +31,13 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'cacao',
+                'surname' => 'cacao',
+                'address' => 'via Lunga 4',
+                'city' => 'Milano',
+                'province' => 'MI',
+                'zip' => '02100',
+                'country' => 'Italy',
+                'privacy' => 1,
                 'email' => 'cacao@cacao.it',
                 'password' => Hash::make('123456'),
                 'role' => '0',
@@ -31,11 +45,21 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'cacao2',
+                'surname' => 'cacao2',
+                'address' => 'via Magellano 32',
+                'city' => 'Roma',
+                'province' => 'RM',
+                'zip' => '06010',
+                'country' => 'Italy',
+                'privacy' => 1,
                 'email' => 'cacao2@cacao.it',
                 'password' => Hash::make('123456'),
                 'role' => '0',
                 'balance' => 20.5
             ],
         ]);
+
+
+        User::factory(100)->create();
     }
 }

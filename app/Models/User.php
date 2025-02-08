@@ -48,6 +48,11 @@ class User extends Authenticatable
         return '€ '. number_format($this->balance, 2, ',', '.');
     }
 
+    public function getFullnameAttribute()
+    {
+        return $this->name.' '.$this->surname;
+    }
+
     public function scopeClients(Builder $query)
     {
         $query->where('role', '0');
