@@ -62,4 +62,18 @@ class User extends Authenticatable
     {
         return $this->role == 1;
     }
+
+    public function myProductsOwner()
+    {
+        return $this->belongsToMany(Product::class)
+            ->wherePivot('owner', 1)
+            ->orderByPivot('created_at', 'desc');
+    }
+
+    public function myProductsNonOwner()
+    {
+        return $this->belongsToMany(Product::class)
+            ->wherePivot('owner', 0)
+            ->orderByPivot('created_at', 'desc');
+    }
 }

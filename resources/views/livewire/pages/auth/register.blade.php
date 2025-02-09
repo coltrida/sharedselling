@@ -140,12 +140,19 @@ new #[Layout('layouts.guest')] class extends Component
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-between mt-4">
             <div>
                 <div class="flex">
-                    <x-input-label for="privacy" :value="__('privacy')" />
-                    <input type="checkbox" wire:model="privacy" id="privacy" class="mx-6 rounded-sm" name="privacy" required />
+                    <input type="checkbox" wire:model="privacy" id="privacy" class="rounded-sm" name="privacy" required />
+                    <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree  <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
                 </div>
+
+
+                 {{--   <div class="flex">
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                    </div>
+                    <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree  <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+--}}
 
                 <x-input-error :messages="$errors->get('privacy')" class="mt-2" />
             </div>
