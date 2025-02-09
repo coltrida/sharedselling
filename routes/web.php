@@ -10,6 +10,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('user')->group(function () {
         Route::view('/uploadProduct', 'pages.user.product.upload')->name('user.product.upload');
         Route::view('/myProducts', 'pages.user.product.myProducts')->name('user.product.myProducts');
+//        Route::view('/myProducts/{product}', 'pages.user.product.myProducts')->name('user.product.myProducts');
     });
 
 

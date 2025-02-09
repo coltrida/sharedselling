@@ -8,13 +8,18 @@ class Product extends Model
 {
     protected $guarded = [];
 
-    public function categories()
+    public function tags()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Tag::class);
     }
 
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategory::class);
     }
 }

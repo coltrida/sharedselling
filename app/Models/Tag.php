@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Tag extends Model
 {
     protected $guarded = [];
 
-    public function subcategories()
+    public function products()
     {
-        return $this->hasMany(Subcategory::class);
+        return $this->belongsToMany(Product::class);
     }
 }

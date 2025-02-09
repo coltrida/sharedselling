@@ -4,6 +4,7 @@ namespace App\Livewire\Pages\User\Product;
 
 use App\Services\CategoryService;
 use App\Services\ProductService;
+use App\Services\TagService;
 use Illuminate\Http\Request;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -13,18 +14,42 @@ class Upload extends Component
 {
     use WithFileUploads;
 
-    public $categoryList = [];
+    public $tagList = [];
     public $name;
+    public $description;
     public $cost;
+    public $tag;
     public $category;
+    public $subcategory;
+    public $subcategories = [];
+    public $tags = [];
+    public $showSubcategory = false;
+    public $showTags = false;
 
     #[Validate('image|max:2048')]
     public $photo;
 
 
-    public function categorySelected()
+    public function tagSelected()
     {
-        array_push($this->categoryList, json_decode($this->category));
+        array_push($this->tagList, json_decode($this->tag));
+    }
+
+    public function categorySelected(CategoryService $categoryService)
+    {
+        $this->subcategories = $categoryService->loadSubcategory($this->category);
+        $this->showSubcategory = true;
+    }
+
+    public function subcategorySelected(TagService $tagService)
+    {
+        $this->tags = $tagService->loadTags($this->subcategory);
+        $this->showTags = true;
+    }
+
+    public function eliminaFoto()
+    {
+        $this->reset('photo');
     }
 
     public function save(ProductService $productService)
@@ -33,7 +58,9 @@ class Upload extends Component
         $request->merge([
             'name' => $this->name,
             'cost' => $this->cost,
-            'categoryList' => $this->categoryList,
+            'description' => $this->description,
+            'subcategory_id' => $this->subcategory,
+            'tagList' => $this->tagList,
             'photo' => $this->photo,
         ]);
         $productService->store($request);

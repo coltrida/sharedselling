@@ -17,7 +17,7 @@
     </div>
 
 
-    <h2 class="text-white text-xl mt-4">Last uploaded</h2>
+    <h2 class="text-white text-2xl mt-4 mb-2">Last uploaded</h2>
 
     <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
         <div>

@@ -15,4 +15,9 @@ class CategoryService
     {
         Category::find($id)->delete();
     }
+
+    public function loadSubcategory($idCategory)
+    {
+        return Category::with('subcategories')->find($idCategory)->subcategories;
+    }
 }

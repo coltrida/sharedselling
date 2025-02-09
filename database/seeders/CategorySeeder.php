@@ -15,22 +15,13 @@ class CategorySeeder extends Seeder
     {
         Category::insert([
             [
-                'name' => 'male'
+                'name' => 'men clothing'
             ],
             [
-                'name' => 'female'
+                'name' => 'women clothing'
             ],
             [
-                'name' => 'xl'
-            ],
-            [
-                'name' => 'sx'
-            ],
-            [
-                'name' => 'white'
-            ],
-            [
-                'name' => 'pink'
+                'name' => 'Electronics'
             ],
         ]);
     }
