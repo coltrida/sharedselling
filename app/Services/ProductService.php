@@ -12,6 +12,13 @@ class ProductService
         return Product::all();
     }
 
+    public function findById($id)
+    {
+        return Product::with(['tags','subcategory' => function($s){
+            $s->with('category');
+        }])->find($id);
+    }
+
     public function myProductOwner($id)
     {
         return User::with(['myProductsOwner' => function($p){
