@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.inizio')->name('inizio');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
 
     //--------------------------------USER---------------------------------//
     Route::prefix('user')->group(function () {
@@ -27,7 +27,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'pages.inizio')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 

@@ -23,6 +23,9 @@
                     Tags
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Auth
+                </th>
+                <th scope="col" class="px-6 py-3">
                     photo
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -55,8 +58,19 @@
                             </span>
                         @endforeach
                     </td>
+                    <td class="px-6">
+                        @if($item->auth)
+                            <svg class="w-6 h-6 text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd"/>
+                            </svg>
+                        @else
+                            <svg class="w-6 h-6 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/>
+                            </svg>
+                        @endif
+                    </td>
                     <td class="p-4">
-                        <img src="{{asset('/storage/product/'.$item->id.'/1.jpg')}}" alt="image" width="100">
+                        <img src="{{asset('/storage/product/'.$item->id.'/1.jpg')}}" alt="image" style="max-height: 70px">
                     </td>
                     <td class="px-6 flex mt-4">
                         <button

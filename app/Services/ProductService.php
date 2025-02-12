@@ -48,6 +48,7 @@ class ProductService
            'name' => $request->name,
            'description' => $request->description,
            'cost' => $request->cost,
+           'auth' => 0,
            'subcategory_id' => $request->subcategory_id,
         ]);
 
