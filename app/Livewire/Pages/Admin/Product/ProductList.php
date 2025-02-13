@@ -13,6 +13,11 @@ class ProductList extends Component
         $productService->elimina($id);
     }
 
+    public function autorizza(ProductService $productService, $productId)
+    {
+        $productService->authorize($productId);
+    }
+
     public function render(ProductService $productService)
     {
         return view('livewire.pages.admin.product.product-list', [

@@ -15,31 +15,31 @@ class SubcategorySeeder extends Seeder
     {
         Subcategory::insert([
             [
-                'name' => 'sweater',
+                'name' => 'man sweater',
                 'category_id' => 1
+            ],
+            [
+                'name' => 'woman sweater',
+                'category_id' => 2
             ],
             [
                 'name' => 'skirt',
                 'category_id' => 2
             ],
             [
-                'name' => 'sweater',
-                'category_id' => 2
-            ],
-            [
-                'name' => 'trousers',
+                'name' => 'man trousers',
                 'category_id' => 1
             ],
             [
-                'name' => 'trousers',
+                'name' => 'woman trousers',
                 'category_id' => 2
             ],
             [
-                'name' => 'shoes',
+                'name' => 'man shoes',
                 'category_id' => 1
             ],
             [
-                'name' => 'shoes',
+                'name' => 'woman shoes',
                 'category_id' => 2
             ],
             [

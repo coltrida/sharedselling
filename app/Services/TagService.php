@@ -9,7 +9,14 @@ class TagService
 {
     public function list()
     {
-        return Tag::all();
+        return Tag::with(['subcategories' => function($s){
+            $s->with('category');
+        }])->get();
+    }
+
+    public function listPaginate()
+    {
+        return Tag::with('subcategories')->paginate(5);
     }
 
     public function loadTags($subcategoryId)

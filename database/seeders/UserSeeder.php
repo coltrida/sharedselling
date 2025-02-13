@@ -27,7 +27,8 @@ class UserSeeder extends Seeder
                 'email' => 'admin@admin.it',
                 'password' => Hash::make('123456'),
                 'role' => '1',
-                'balance' => 0
+                'balance' => 0,
+                'email_verified_at' => now()
             ],
             [
                 'name' => 'cacao',
@@ -41,7 +42,8 @@ class UserSeeder extends Seeder
                 'email' => 'cacao@cacao.it',
                 'password' => Hash::make('123456'),
                 'role' => '0',
-                'balance' => 10000
+                'balance' => 10000,
+                'email_verified_at' => now()
             ],
             [
                 'name' => 'cacao2',
@@ -55,7 +57,8 @@ class UserSeeder extends Seeder
                 'email' => 'cacao2@cacao.it',
                 'password' => Hash::make('123456'),
                 'role' => '0',
-                'balance' => 20.5
+                'balance' => 20.5,
+                'email_verified_at' => now()
             ],
         ]);
 

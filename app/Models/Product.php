@@ -29,6 +29,16 @@ class Product extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function owner()
+    {
+        return $this->belongsToMany(User::class)->wherePivot('owner', 1)->first();
+    }
+
+    public function nonOwner()
+    {
+        return $this->belongsToMany(User::class)->wherePivot('owner', 0)->get();
+    }
+
     public function subcategory()
     {
         return $this->belongsTo(Subcategory::class);

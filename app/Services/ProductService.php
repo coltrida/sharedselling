@@ -9,7 +9,10 @@ class ProductService
 {
     public function list()
     {
-        return Product::all();
+        return Product::with(['tags','subcategory' => function($s){
+            $s->with('category');
+        }])->get()
+        ->sortBy('subcategory.category.name');
     }
 
     public function findById($id)
@@ -63,5 +66,10 @@ class ProductService
             $filename = '1.' . $file->extension();
             $file->storeAs('product/'.$product->id.'/', $filename);
         }
+    }
+
+    public function authorize($id)
+    {
+        Product::find($id)->update(['auth' => 1]);
     }
 }

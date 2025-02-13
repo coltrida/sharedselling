@@ -17,7 +17,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //---------------------------------ADMIN--------------------------------//
     Route::prefix('admin')->middleware(\App\Http\Middleware\VerifyIsAdmin::class)->group(function () {
         Route::view('/categories', 'pages.admin.category.list')->name('admin.category.list');
+        Route::view('/subcategories', 'pages.admin.subcategory.list')->name('admin.subcategory.list');
+        Route::view('/tags', 'pages.admin.tag.list')->name('admin.tag.list');
         Route::view('/products', 'pages.admin.product.list')->name('admin.product.list');
+        Route::view('/products/{product}', 'pages.admin.product.info')->name('admin.product.info');
         Route::view('/users', 'pages.admin.user.list')->name('admin.user.list');
     });
 });

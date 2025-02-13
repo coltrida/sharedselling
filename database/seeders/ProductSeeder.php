@@ -46,7 +46,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Sweatshirt',
                 'description' => 'A sweatshirt is a casual, comfortable, long-sleeved garment typically made from cotton, fleece, or a blend of both. It is designed to provide warmth and is often worn for leisure, sports, or casual outings.',
                 'cost' => 50,
-                'auth' => 1,
+                'auth' => 0,
                 'subcategory_id' => 2
             ]);
         $product->users()->attach([5], ['owner' => 1]);

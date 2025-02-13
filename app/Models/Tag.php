@@ -12,4 +12,9 @@ class Tag extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+
+    public function subcategories()
+    {
+        return $this->belongsToMany(Subcategory::class);
+    }
 }

@@ -13,147 +13,80 @@ class TagSeeder extends Seeder
      */
     public function run(): void
     {
-        Tag::insert([
+        $tag = Tag::create(
             [
                 'name' => 'sm',
-                'subcategory_id' => 1
-            ],
-            [
-                'name' => 'sm',
-                'subcategory_id' => 2
-            ],
-            [
-                'name' => 'sm',
-                'subcategory_id' => 3
-            ],
-            [
-                'name' => 'sm',
-                'subcategory_id' => 4
-            ],
-            [
-                'name' => 'sm',
-                'subcategory_id' => 5
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([1,2,3,4,5]);
+
+        $tag = Tag::create([
                 'name' => 'xl',
-                'subcategory_id' => 1
-            ],
-            [
-                'name' => 'xl',
-                'subcategory_id' => 2
-            ],
-            [
-                'name' => 'xl',
-                'subcategory_id' => 3
-            ],
-            [
-                'name' => 'xl',
-                'subcategory_id' => 4
-            ],
-            [
-                'name' => 'xl',
-                'subcategory_id' => 5
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([1,2,3,4,5]);
+
+        $tag = Tag::create([
                 'name' => 'white',
-                'subcategory_id' => 1
-            ],
-            [
-                'name' => 'white',
-                'subcategory_id' => 2
-            ],
-            [
-                'name' => 'white',
-                'subcategory_id' => 3
-            ],
-            [
-                'name' => 'white',
-                'subcategory_id' => 4
-            ],
-            [
-                'name' => 'white',
-                'subcategory_id' => 5
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([1,2,3,4,5]);
+
+        $tag = Tag::create([
                 'name' => 'pink',
-                'subcategory_id' => 1
-            ],
-            [
-                'name' => 'pink',
-                'subcategory_id' => 2
-            ],
-            [
-                'name' => 'pink',
-                'subcategory_id' => 3
-            ],
-            [
-                'name' => 'pink',
-                'subcategory_id' => 4
-            ],
-            [
-                'name' => 'pink',
-                'subcategory_id' => 5
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([1,2,3,4,5]);
+
+        $tag = Tag::create([
                 'name' => '38',
-                'subcategory_id' => 6
-            ],
-            [
-                'name' => '38',
-                'subcategory_id' => 7
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([6,7]);
+
+        $tag = Tag::create([
                 'name' => '39',
-                'subcategory_id' => 6
-            ],
-            [
-                'name' => '39',
-                'subcategory_id' => 7
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([6,7]);
+
+        $tag = Tag::create([
                 'name' => '40',
-                'subcategory_id' => 6
-            ],
-            [
-                'name' => '40',
-                'subcategory_id' => 7
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([6,7]);
+
+        $tag = Tag::create([
                 'name' => 'Samsung',
-                'subcategory_id' => 8
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([8,9,10]);
+
+        $tag = Tag::create([
                 'name' => 'Apple',
-                'subcategory_id' => 8
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([8, 10]);
+
+        $tag = Tag::create([
                 'name' => '6 inc',
-                'subcategory_id' => 8
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([10]);
+
+        $tag = Tag::create([
                 'name' => '40 inc',
-                'subcategory_id' => 9
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([9]);
+
+        $tag = Tag::create([
                 'name' => '50 inc',
-                'subcategory_id' => 9
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([9]);
+
+        $tag = Tag::create([
                 'name' => 'dark',
-                'subcategory_id' => 10
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([1,2,3,4]);
+
+        $tag = Tag::create([
                 'name' => 'wifi',
-                'subcategory_id' => 10
-            ],
-            [
+            ]);
+        $tag->subcategories()->attach([10]);
+
+        $tag = Tag::create([
                 'name' => 'green',
-                'subcategory_id' => 1
-            ],
-            [
-                'name' => 'green',
-                'subcategory_id' => 3
-            ],
-        ]);
+            ]);
+        $tag->subcategories()->attach([1,2,3,4]);
     }
 }

@@ -8,7 +8,9 @@ class CategoryService
 {
     public function list()
     {
-        return Category::all();
+        return Category::with(['subcategories' => function($c){
+            $c->with('tags');
+        }])->get();
     }
 
     public function elimina($id)
